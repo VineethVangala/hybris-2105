@@ -1,0 +1,55 @@
+# Folders to ignore at root(hybris)
+hybris-sbg
+installer
+build-tools
+c4c-integration
+
+# Folders to ignore, whatever the place they are
+.metadata
+classes
+hybris/bin/**/bin
+gensrc
+
+# Folders to ignore at the root of the repository
+hybris/log/
+hybris/temp/
+hybris/data/
+licenses/
+hybris/roles
+hybris/hybris/sampleconfigurations/
+
+
+# filter only custom extension
+hybris/bin/*
+!hybris/bin/custom/
+
+# Filename patterns to ignore
+*.class
+build.xml
+Generated*.java
+platformhome.properties
+*testclasses.xml
+extensioninfo.xsd
+*hmc.jar
+hmc.xsd
+items.xsd
+beans.xsd
+ruleset.xml
+*.log
+base.properties
+SIGNATURE.SMF
+package-lock.json
+.DS_Store
+.classpath
+.project
+*.swp
+
+#  Addon specific copy folders
+**/_ui/addons
+**/views/addons
+**/tld/addons
+**/tags/addons
+**/messages/addons
+*_bof.jar
+**/.project
+**/.springBeans
