@@ -53,3 +53,5 @@ package-lock.json
 *_bof.jar
 **/.project
 **/.springBeans
+*.prefs
+*.lastupdate
