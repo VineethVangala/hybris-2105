@@ -21,7 +21,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import concerttours.data.BandData;
 import concerttours.facades.BandFacade;
 import concerttours.model.BandModel;
- 
+
 /**
  * This test file tests and demonstrates the behavior of the BandFacade's methods getAllBands and getBand.
  */
@@ -43,18 +43,23 @@ public class DefaultBandFacadeIntegrationTest extends ServicelayerTransactionalT
     /** Albums sold by test band. */
     private static final Long ALBUMS_SOLD = Long.valueOf(10L);
     @Before
-    public void setUp()
+	 public void setUp() throws Exception
     {
         try {
-          Thread.sleep(TimeUnit.SECONDS.toMillis(1));
-          new JdbcTemplate(Registry.getCurrentTenant().getDataSource()).execute("CHECKPOINT");
-          Thread.sleep(TimeUnit.SECONDS.toMillis(1));
-        } catch (final InterruptedException exc) {}
+			  Thread.sleep(TimeUnit.SECONDS.toMillis(1));
+			  new JdbcTemplate(Registry.getCurrentTenant().getDataSource()).execute("CHECKPOINT");
+			  Thread.sleep(TimeUnit.SECONDS.toMillis(1));
+		  }
+		  catch (final InterruptedException exc)
+		  {
+		  }
+		  importCsv("/impex/essentialdata-mediaformats.impex", "UTF-8");
+
         // This instance of a BandModel will be used by the tests
-        bandModel = modelService.create(BandModel.class); 
+        bandModel = modelService.create(BandModel.class);
         bandModel.setCode(BAND_CODE);
-        bandModel.setName(BAND_NAME);      
-        
+        bandModel.setName(BAND_NAME);
+
         bandModel.setHistory(BAND_HISTORY);
         bandModel.setAlbumSales(ALBUMS_SOLD);
     }

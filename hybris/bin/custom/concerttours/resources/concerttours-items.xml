@@ -80,29 +80,33 @@
     </itemtype>
     <!-- Hybris123SnippetEnd -->
 
-    <!-- Hybris123SnippetStart concerttours-items.xml_Band -->
-    <itemtype generate="true" code="Band" autocreate="true">
-        <deployment table="Bands" typecode="30268" />
-        <attributes>
-            <attribute qualifier="code" type="java.lang.String">
-                <description>short unique code of band</description>
-                <persistence type="property" />
-            </attribute>
-            <attribute qualifier="name" type="java.lang.String">
-                <description>name of band</description>
-                <persistence type="property" />
-                <modifiers optional="false" unique="true" />
-            </attribute>
-            <attribute qualifier="history" type="localized:java.lang.String">
-                <description>history of band</description>
-                <persistence type="property" />
-            </attribute>
-            <attribute qualifier="albumSales" type="java.lang.Long">
-                <description>official global album sales</description>
-                <persistence type="property" />
-            </attribute>
-        </attributes>
-    </itemtype>
+	<!-- Hybris123SnippetStart concerttours-items.xml_Band -->
+	<itemtype generate="true" code="Band" autocreate="true">
+		<deployment table="Bands" typecode="30268" />
+		<attributes>
+			<attribute qualifier="code" type="java.lang.String">
+				<description>short unique code of band</description>
+				<persistence type="property" />
+			</attribute>
+			<attribute qualifier="name" type="java.lang.String">
+				<description>name of band</description>
+				<persistence type="property" />
+				<modifiers optional="false" unique="true" />
+			</attribute>
+			<attribute qualifier="history" type="localized:java.lang.String">
+				<description>history of band</description>
+				<persistence type="property" />
+			</attribute>
+			<attribute qualifier="albumSales" type="java.lang.Long">
+				<description>official global album sales</description>
+				<persistence type="property" />
+			</attribute>
+			<attribute qualifier="image" type="MediaContainer">
+				<description>picture of band in different formats</description>
+				<persistence type="property" />
+			</attribute>
+		</attributes>
+	</itemtype>
     <!-- Hybris123SnippetEnd -->
     
     <itemtype generate="true" code="News" autocreate="true">
