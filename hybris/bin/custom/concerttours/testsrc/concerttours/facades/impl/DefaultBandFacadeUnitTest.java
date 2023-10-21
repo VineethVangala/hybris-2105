@@ -8,6 +8,7 @@ import de.hybris.platform.servicelayer.model.ModelService;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 import org.junit.Assert;
 import org.junit.Before;
@@ -18,7 +19,7 @@ import concerttours.model.BandModel;
 import concerttours.service.BandService;
 
 @UnitTest
-public class DefaultBandFacadeUnitTest 
+public class DefaultBandFacadeUnitTest
 {
    private DefaultBandFacade bandFacade;
     private ModelService modelService;
@@ -43,7 +44,7 @@ public class DefaultBandFacadeUnitTest
        modelService.attach(band);
        band.setName(BAND_NAME);
        band.setAlbumSales(ALBUMS_SOLD);
-       band.setHistory(BAND_HISTORY);
+		 band.setHistory(BAND_HISTORY, Locale.ENGLISH);
        return band;
    }
    @Before
