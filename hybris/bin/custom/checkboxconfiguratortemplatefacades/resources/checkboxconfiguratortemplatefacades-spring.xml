@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/aop
+           http://www.springframework.org/schema/aop/spring-aop.xsd">
+    <bean id="checkboxConfigurationsPopulator" class="de.hybris.platform.checkboxconfiguratortemplatefacades.populators.CheckboxConfigurationsPopulator" />
+    <bean id="checkboxConfiguratorEnum" class="de.hybris.platform.catalog.enums.ConfiguratorType" factory-method="valueOf">
+        <constructor-arg value="CHECKBOX"/>
+    </bean>
+    <bean parent="modifyPopulatorList">
+        <property name="list" ref="orderEntryProductInfoConverter"/>
+        <property name="add" ref="checkboxConfigurationsPopulator"/>
+    </bean>
+    <bean id="checkboxConfigurationHandlerRegistrar" parent="mapMergeDirective" depends-on="productConfigurationHandlers">
+        <property name="key" value="CHECKBOX" />
+        <property name="value" ref="checkboxConfigurationHandler" />
+    </bean>
+    <bean id="checkboxConfigurationMergeStrategyDirective" depends-on="defaultConfigurationMergeStrategies" parent="mapMergeDirective">
+        <property name="key" ref="checkboxConfiguratorEnum" />
+        <property name="value" ref="checkboxConfigurationMergeStrategy" />
+    </bean>
+    <bean id="checkboxConfigurationMergeStrategy" class="de.hybris.platform.checkboxconfiguratortemplatefacades.strategies.CheckboxProductConfigurationMergeStrategy"/>
+             
+</beans>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extensioninfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="extensioninfo.xsd">
+    <extension abstractclassprefix="Generated" classprefix="Checkboxconfiguratortemplatefacades" managername="CheckboxconfiguratortemplatefacadesManager" managersuperclass="de.hybris.platform.jalo.extension.Extension" name="checkboxconfiguratortemplatefacades">
+        <requires-extension name="checkboxconfiguratortemplateservices"/>
+        <requires-extension name="commercefacades"/>
+        <coremodule generated="true" manager="de.hybris.platform.checkboxconfiguratortemplatefacades.jalo.CheckboxconfiguratortemplatefacadesManager" packageroot="de.hybris.platform.checkboxconfiguratortemplatefacades"/>
+    </extension>
+ 
+</extensioninfo>
